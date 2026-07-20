@@ -7,8 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const links = [
   { href: '#editions', label: 'Editions' },
-  { href: '#philosophy', label: 'Philosophy' },
-  { href: '#composition', label: 'Composition' }
+  { href: '#terroir', label: 'Terroir' },
+  { href: '#allocation', label: 'Allocation' }
 ];
 
 export default function Nav() {

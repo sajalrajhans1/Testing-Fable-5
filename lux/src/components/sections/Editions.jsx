@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Tilt from '../ui/Tilt';
 import { motionOK } from '../../lib/motion';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -51,6 +52,8 @@ function EditionVessel({ vesselRef }) {
 export default function Editions() {
   const scope = useRef(null);
   const vesselRef = useRef(null);
+  const spinRef = useRef(null);
+  const glowRef = useRef(null);
 
   useEffect(() => {
     if (!motionOK || !scope.current) return;
@@ -67,7 +70,7 @@ export default function Editions() {
         scrollTrigger: {
           trigger: scope.current,
           start: 'top top',
-          end: '+=240%',
+          end: '+=260%',
           pin: true,
           scrub: 1,
           anticipatePin: 1
@@ -79,12 +82,21 @@ export default function Editions() {
         tl.addLabel(at, '+=0.6');
         tl.to(scope.current, { backgroundColor: EDITIONS[i].wash, duration: 1 }, at);
         tl.to(vesselRef.current, { '--vessel-accent': EDITIONS[i].accent, duration: 1 }, at);
+        tl.to(glowRef.current, { backgroundColor: EDITIONS[i].accent, duration: 1 }, at);
         tl.to(names[i - 1], { opacity: 0, y: -44, duration: 0.5 }, at);
-        tl.fromTo(names[i], { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.5 }, `${at}+=0.4`);
+        tl.fromTo(names[i], { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: 0.5, immediateRender: false }, `${at}+=0.4`);
         tl.to(notes[i - 1], { opacity: 0, y: -22, duration: 0.4 }, at);
-        tl.fromTo(notes[i], { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.4 }, `${at}+=0.45`);
-        tl.to(vlabels[i - 1], { opacity: 0, duration: 0.3 }, `${at}+=0.15`);
-        tl.to(vlabels[i], { opacity: 1, duration: 0.3 }, `${at}+=0.45`);
+        tl.fromTo(notes[i], { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.4, immediateRender: false }, `${at}+=0.45`);
+        // vessel turns through edge-on while the label swaps behind the spin
+        tl.to(spinRef.current, { rotationY: 90, duration: 0.35, ease: 'power1.in' }, at);
+        tl.to(vlabels[i - 1], { opacity: 0, duration: 0.06 }, `${at}+=0.32`);
+        tl.to(vlabels[i], { opacity: 1, duration: 0.06 }, `${at}+=0.36`);
+        tl.fromTo(
+          spinRef.current,
+          { rotationY: -90 },
+          { rotationY: 0, duration: 0.35, ease: 'power1.out', immediateRender: false },
+          `${at}+=0.35`
+        );
       }
       tl.to({}, { duration: 0.6 });
     }, scope);
@@ -131,8 +143,18 @@ export default function Editions() {
               </h3>
             ))}
           </div>
-          <div className="justify-self-center order-1 lg:order-2">
-            <EditionVessel vesselRef={vesselRef} />
+          <div className="relative justify-self-center order-1 lg:order-2">
+            <div
+              ref={glowRef}
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] aspect-square rounded-full opacity-15 blur-3xl"
+              style={{ backgroundColor: EDITIONS[0].accent }}
+            />
+            <Tilt amplitude={5}>
+              <div ref={spinRef} className="[transform-style:preserve-3d] will-change-transform">
+                <EditionVessel vesselRef={vesselRef} />
+              </div>
+            </Tilt>
           </div>
           <div className="grid order-3 text-center lg:text-left">
             {EDITIONS.map(e => (

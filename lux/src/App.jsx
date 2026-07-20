@@ -8,8 +8,10 @@ import Nav from './components/sections/Nav';
 import Hero from './components/sections/Hero';
 import Pour from './components/sections/Pour';
 import Editions from './components/sections/Editions';
+import Terroir from './components/sections/Terroir';
 import Philosophy from './components/sections/Philosophy';
 import Composition from './components/sections/Composition';
+import Allocation from './components/sections/Allocation';
 import Voices from './components/sections/Voices';
 import Reserve from './components/sections/Reserve';
 import Footer from './components/sections/Footer';
@@ -43,8 +45,10 @@ export default function App() {
         <Hero />
         <Pour />
         <Editions />
+        <Terroir />
         <Philosophy />
         <Composition />
+        <Allocation />
         <Voices />
         <Reserve />
       </main>

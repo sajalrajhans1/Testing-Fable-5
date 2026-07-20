@@ -2,8 +2,9 @@ import { scrollToTarget } from '../../lib/motion';
 
 const nav = [
   { href: '#editions', label: 'Editions' },
+  { href: '#terroir', label: 'Terroir' },
   { href: '#philosophy', label: 'Philosophy' },
-  { href: '#composition', label: 'Composition' }
+  { href: '#allocation', label: 'Allocation' }
 ];
 const social = [
   { href: '#', label: 'Instagram' },

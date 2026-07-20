@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Vessel from '../ui/Vessel';
+import Tilt from '../ui/Tilt';
 import { motionOK } from '../../lib/motion';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -41,7 +42,9 @@ export default function Pour() {
           </p>
         </div>
         <div className="pour-vessel justify-self-center lg:justify-self-end">
-          <Vessel edition="Cacao Noir" accent="var(--color-cacao)" />
+          <Tilt amplitude={6}>
+            <Vessel edition="Cacao Noir" accent="var(--color-cacao)" />
+          </Tilt>
         </div>
       </div>
     </section>
