@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PUNCH · Plant Protein That Slaps</title>
+  <meta name="description" content="PUNCH is plant protein that packs a punch. 25g of protein, zero added sugar, three flavors that actually slap.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon fill='%23FFBE0B' stroke='%2317151F' stroke-width='1.5' points='12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader-word">
+      <span>P</span><span>U</span><span>N</span><span>C</span><span>H</span>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav-logo" href="#top" aria-label="PUNCH home">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><polygon fill="var(--yellow)" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round" points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>
+      <span>PUNCH</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#flavors">Flavors</a>
+      <a href="#why">Why Punch</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#buy">Grab a pack</a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bgword" aria-hidden="true">PUNCH!</div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="line"><span class="line-inner">PROTEIN THAT</span></span>
+            <span class="line"><span class="line-inner">PACKS A <em>PUNCH</em></span></span>
+          </h1>
+          <p class="hero-sub" data-intro>25 grams of plant protein, zero added sugar, and three flavors that actually slap.</p>
+          <div class="hero-ctas" data-intro>
+            <a class="btn btn-primary" href="#buy">Grab a pack
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#flavors">See flavors</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="can can-mango hero-can" aria-hidden="true">
+            <div class="can-lid"><i></i></div>
+            <div class="can-body">
+              <span class="can-brand">PUNCH</span>
+              <span class="can-flavor">MANGO<br>MAYHEM</span>
+              <span class="can-meta">25G PLANT PROTEIN</span>
+            </div>
+          </div>
+          <div class="sticker sticker-burst" aria-hidden="true"><span>NEW!</span></div>
+          <div class="sticker sticker-pill" aria-hidden="true">PLANT-BASED</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VELOCITY MARQUEE ============ -->
+    <div class="marquee" aria-label="25 grams protein, zero added sugar, plant based, no chalk vibes">
+      <div class="marquee-track">
+        <div class="marquee-block">
+          <span>25G PROTEIN</span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>
+          <span>ZERO ADDED SUGAR</span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>
+          <span>PLANT-BASED</span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>
+          <span>NO CHALK VIBES</span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FLAVORS (PINNED COLOR MORPH) ============ -->
+    <section class="flavors" id="flavors">
+      <div class="flavors-stage">
+        <p class="flavors-kicker">Three flavors. Zero apologies.</p>
+        <div class="flavors-grid">
+          <div class="flavor-names">
+            <h3 class="flavor-name is-active" data-flavor="0">MANGO<br>MAYHEM</h3>
+            <h3 class="flavor-name" data-flavor="1">BERRY<br>BLITZ</h3>
+            <h3 class="flavor-name" data-flavor="2">LIME<br>RIOT</h3>
+          </div>
+          <div class="flavor-canwrap">
+            <div class="can flavor-can" aria-hidden="true">
+              <div class="can-lid"><i></i></div>
+              <div class="can-body">
+                <span class="can-brand">PUNCH</span>
+                <span class="can-flavor-stack">
+                  <span class="can-flavor is-active">MANGO<br>MAYHEM</span>
+                  <span class="can-flavor">BERRY<br>BLITZ</span>
+                  <span class="can-flavor">LIME<br>RIOT</span>
+                </span>
+                <span class="can-meta">25G PLANT PROTEIN</span>
+              </div>
+            </div>
+          </div>
+          <div class="flavor-details">
+            <div class="flavor-detail is-active">
+              <p class="flavor-tag">Ripe alphonso mango with a chili wink at the finish.</p>
+              <ul class="chips"><li>ALPHONSO MANGO</li><li>CHILI TINGLE</li><li>OAT CREAM</li></ul>
+            </div>
+            <div class="flavor-detail">
+              <p class="flavor-tag">Blackberry and raspberry with zero chill whatsoever.</p>
+              <ul class="chips"><li>BLACKBERRY</li><li>RASPBERRY</li><li>HIBISCUS</li></ul>
+            </div>
+            <div class="flavor-detail">
+              <p class="flavor-tag">Key lime and mint with a salty little kick.</p>
+              <ul class="chips"><li>KEY LIME</li><li>MINT</li><li>SEA SALT</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY / BENTO ============ -->
+    <section class="why" id="why">
+      <div class="why-head">
+        <h2>No chalk. No sludge.<br>No fine print.</h2>
+        <p>Every can pulls its weight in the gym and tastes like a treat doing it.</p>
+      </div>
+      <div class="bento">
+        <article class="cell cell-big">
+          <p class="cell-num"><span data-count="25">0</span><small>g</small></p>
+          <h3>Plant protein per can</h3>
+          <p class="cell-body">Pea and brown-rice blend with a full amino profile. Your muscles cannot tell the difference. Your taste buds can.</p>
+        </article>
+        <article class="cell cell-zero">
+          <p class="cell-num"><span data-count="0">0</span><small>g</small></p>
+          <h3>Added sugar</h3>
+        </article>
+        <article class="cell cell-vegan">
+          <p class="cell-num">100<small>%</small></p>
+          <h3>Plants, all the way down</h3>
+          <p class="cell-body">Vegan, gluten-free, and dairy-free without tasting like a punishment.</p>
+        </article>
+        <article class="cell cell-kcal">
+          <p class="cell-num"><span data-count="140">0</span></p>
+          <h3>Calories, flat</h3>
+        </article>
+        <article class="cell cell-sweet">
+          <h3>Sweetened with fruit, not syrup</h3>
+          <p class="cell-body">Mango, berries, and lime do the heavy lifting. Stevia spots them.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ RITUAL (HORIZONTAL PAN) ============ -->
+    <section class="ritual" aria-label="The three second ritual">
+      <div class="ritual-track">
+        <div class="panel panel-intro">
+          <h2>The ritual</h2>
+          <p>Three seconds, three moves.</p>
+          <svg class="panel-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>
+        </div>
+        <div class="panel panel-shake">
+          <h3>SHAKE.</h3>
+          <p>Ten seconds, wrist only. Wake the protein up.</p>
+          <div class="can can-mango panel-can tilt-l" aria-hidden="true">
+            <div class="can-lid"><i></i></div>
+            <div class="can-body"><span class="can-brand">PUNCH</span><span class="can-flavor">MANGO<br>MAYHEM</span><span class="can-meta">25G PLANT PROTEIN</span></div>
+          </div>
+        </div>
+        <div class="panel panel-crack">
+          <h3>CRACK.</h3>
+          <p>That tab snap? Your starting gun.</p>
+          <div class="can can-berry panel-can tilt-r" aria-hidden="true">
+            <div class="can-lid"><i></i></div>
+            <div class="can-body"><span class="can-brand">PUNCH</span><span class="can-flavor">BERRY<br>BLITZ</span><span class="can-meta">25G PLANT PROTEIN</span></div>
+          </div>
+        </div>
+        <div class="panel panel-chug">
+          <h3>CHUG.</h3>
+          <p>Down it, lift heavy, repeat tomorrow.</p>
+          <div class="can can-lime panel-can tilt-l" aria-hidden="true">
+            <div class="can-lid"><i></i></div>
+            <div class="can-body"><span class="can-brand">PUNCH</span><span class="can-flavor">LIME<br>RIOT</span><span class="can-meta">25G PLANT PROTEIN</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="reviews" id="reviews">
+      <h2>People are punching the air</h2>
+      <div class="review-row">
+        <figure class="review review-a">
+          <blockquote>&ldquo;First protein drink I finish without pinching my nose. Berry Blitz is basically dessert.&rdquo;</blockquote>
+          <figcaption><strong>Maya Okafor</strong><span>CrossFit coach</span></figcaption>
+        </figure>
+        <figure class="review review-b">
+          <blockquote>&ldquo;I crack a Lime Riot at kilometer 30. It hits harder than the wall does.&rdquo;</blockquote>
+          <figcaption><strong>Diego Ramírez</strong><span>Marathon runner</span></figcaption>
+        </figure>
+        <figure class="review review-c">
+          <blockquote>&ldquo;Twenty-five grams, and my kids still steal it from the fridge. Send more mango.&rdquo;</blockquote>
+          <figcaption><strong>Priya Nair</strong><span>Climbing coach</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ BIG CTA ============ -->
+    <section class="cta" id="buy">
+      <p class="cta-word" aria-hidden="true">THIRSTY?</p>
+      <h2 class="visually-hidden">Get your pack of PUNCH</h2>
+      <p class="cta-sub">Twelve cans, three flavors, shipped free to your door.</p>
+      <a class="btn btn-primary btn-xl" href="#top">Grab a pack
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></svg>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-mark">PUNCH</p>
+    <div class="footer-cols">
+      <nav aria-label="Footer">
+        <a href="#flavors">Flavors</a>
+        <a href="#why">Why Punch</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <nav aria-label="Social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
+      </nav>
+    </div>
+    <p class="footer-fine">PUNCH is a fictional brand concept. Nutrition values shown are illustrative. &copy; 2026 Punch Beverage Co.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "argent-lux",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "D:/bottogod/Fable-5/lux", "run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "punch-landing",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4173"],
+      "port": 4173
+    }
+  ]
+}

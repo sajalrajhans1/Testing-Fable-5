@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ARGENT · cold-luxury system
+   Palette: obsidian bases, platinum/silver text, edition washes
+   Radius rule: buttons are pills, cards/media are 2px (near-sharp)
+   Motion rule: slow ease-out reveals, 600-1000ms, no bounce
+   ============================================================ */
+
+@theme {
+  --color-obsidian: #0A0A0C;
+  --color-obsidian-2: #101014;
+  --color-platinum: #E8E9ED;
+  --color-silver: #A7ABB5;
+  --color-smoke: #5C606B;
+  --color-cacao: #C29A78;
+  --color-vanille: #D8CFBA;
+  --color-matcha: #A9BC9C;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --ease-lux: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  background: var(--color-obsidian);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-platinum);
+  background: var(--color-obsidian);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(232, 233, 237, 0.9); color: #0A0A0C; }
+
+:focus-visible {
+  outline: 1px solid var(--color-platinum);
+  outline-offset: 4px;
+}
+
+/* film grain, fixed and inert */
+.grain {
+  position: fixed; inset: 0; z-index: 90;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.hairline { border-color: rgba(232, 233, 237, 0.1); }
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-smoke);
+}
+
+/* ---------- buttons ---------- */
+.btn-lux {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-weight: 500; font-size: 0.9rem; letter-spacing: 0.08em;
+  color: #0A0A0C; background: var(--color-platinum);
+  border: 1px solid var(--color-platinum);
+  border-radius: 999px;
+  padding: 0.95rem 2.4rem;
+  cursor: pointer; text-decoration: none;
+  transition: transform 180ms var(--ease-lux), background 260ms var(--ease-lux), box-shadow 260ms var(--ease-lux);
+}
+.btn-lux:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-lux:hover { background: #ffffff; box-shadow: 0 8px 40px rgba(232, 233, 237, 0.18); }
+}
+.btn-ghost-lux {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-weight: 500; font-size: 0.85rem; letter-spacing: 0.08em;
+  color: var(--color-platinum);
+  background: rgba(10, 10, 12, 0.4); /* scrim: stays readable over bright chrome */
+  border: 1px solid rgba(232, 233, 237, 0.28);
+  border-radius: 999px;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer; text-decoration: none;
+  transition: border-color 260ms var(--ease-lux), background 260ms var(--ease-lux), transform 180ms var(--ease-lux);
+}
+.btn-ghost-lux:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost-lux:hover { border-color: rgba(232, 233, 237, 0.7); background: rgba(232, 233, 237, 0.05); }
+}
+
+/* ---------- the vessel ---------- */
+.vessel {
+  position: relative;
+  width: clamp(150px, 15vw, 205px);
+}
+.vessel-cap {
+  height: 26px;
+  margin: 0 31%;
+  background: linear-gradient(180deg, #43454C, #1E1F24 70%, #14151A);
+  border: 1px solid rgba(232, 233, 237, 0.18);
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+.vessel-body {
+  position: relative;
+  aspect-ratio: 9 / 21;
+  border: 1px solid rgba(232, 233, 237, 0.14);
+  border-radius: 30px 30px 14px 14px / 66px 66px 10px 10px;
+  background:
+    linear-gradient(104deg,
+      #131318 0%, #1E1F26 24%, #26272F 33%,
+      #0E0E12 52%, #16171C 74%, #202128 88%, #101015 100%);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.9rem;
+  padding: 14% 10%;
+}
+.vessel-body::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 20%;
+  width: 5%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 70%);
+  pointer-events: none;
+}
+.vessel-monogram {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-platinum);
+}
+.vessel-wordmark {
+  font-size: clamp(0.58rem, 0.72vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em; /* optically recenter tracked caps */
+  color: var(--color-silver);
+}
+.vessel-rule {
+  width: 42%; height: 1px;
+  background: rgba(232, 233, 237, 0.16);
+}
+.vessel-edition {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+  color: var(--vessel-accent, var(--color-silver));
+  text-align: center;
+  line-height: 1.2;
+  transition: color 600ms var(--ease-lux);
+}
+.vessel-grams {
+  font-size: clamp(0.52rem, 0.62vw, 0.62rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  color: var(--color-smoke);
+}
+.vessel-shadow {
+  margin: 18px auto 0;
+  width: 76%; height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75), transparent 70%);
+}
+
+/* ---------- section rhythm ---------- */
+.section-pad { padding: clamp(7rem, 14vh, 11rem) clamp(1.25rem, 6vw, 5rem); }
+.measure { max-width: 62ch; }
+
+/* nav surface once scrolled */
+.nav-scrolled {
+  background: rgba(10, 10, 12, 0.88);
+  border-bottom: 1px solid rgba(232, 233, 237, 0.08);
+}
+
+/* split-text line masking */
+.split-parent .split-line { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
